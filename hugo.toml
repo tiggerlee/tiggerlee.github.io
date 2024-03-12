@@ -1,19 +1,32 @@
-baseURL = "http://example.org/"
-# [en, zh-cn, fr, ...] determines default content language
-defaultContentLanguage = "en"
-# language code
-languageCode = "en"
-title = "My New Hugo Site"
+baseURL = "https://tiggerlee.github.io"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "DoIt"
 
-[params]
-  # DoIt theme version
-  version = "0.2.X"
+# website title
+title = "Tigger's Blog"
 
+
+# language code ["en", "zh-CN", "fr", "pl", ...]
+languageCode = "en"
+# language name ["English", "简体中文", "Français", "Polski", ...]
+languageName = "English"
+# whether to include Chinese/Japanese/Korean
+hasCJKLanguage = true
+# determines default content language ["en", "zh-cn", "fr", "pl", ...]
+defaultContentLanguage = "en"
+
+# Author config
+[author]
+  name = "TiggerLee"
+  email = "tiggerlee@gmail.com"
+  link = "https://tiggerlee.github.io"
+
+
+# Menu config
 [menu]
   [[menu.main]]
+    weight = 1
     identifier = "posts"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
@@ -23,28 +36,147 @@ theme = "DoIt"
     url = "/posts/"
     # title will be shown when you hover on this menu link
     title = ""
-    weight = 1
   [[menu.main]]
+    weight = 2
     identifier = "tags"
     pre = ""
     post = ""
     name = "Tags"
     url = "/tags/"
     title = ""
-    weight = 2
   [[menu.main]]
+    weight = 3
     identifier = "categories"
     pre = ""
     post = ""
     name = "Categories"
     url = "/categories/"
     title = ""
-    weight = 3
 
+[params]
+  # site default theme ["auto", "light", "dark"]
+  defaultTheme = "auto"
+  # LoveIt NEW | 0.2.0 date format
+  dateFormat = "2006-01-02"
+
+  # Header config
+  [params.header]
+    # desktop header mode ["fixed", "normal", "auto"]
+    desktopMode = "fixed"
+    # mobile header mode ["fixed", "normal", "auto"]
+    mobileMode = "auto"
+    # LoveIt NEW | 0.2.0 Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = ""
+      # title name
+      name = "Tigger's Blog"
+      # you can add extra information before the name (HTML format is supported), such as icons
+      pre = ""
+      # you can add extra information after the name (HTML format is supported), such as icons
+      post = ""
+      # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
+      typeit = false
+
+  # Footer config
+  [params.footer]
+    enable = true
+    # LoveIt NEW | 0.2.0 Custom content (HTML format is supported)
+    custom = ''
+    # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
+    hugo = true
+    # LoveIt NEW | 0.2.0 whether to show copyright info
+    copyright = true
+    # LoveIt NEW | 0.2.0 whether to show the author
+    author = true
+    # Site creation time
+    since = 2022
+    # ICP info only in China (HTML format is supported)
+    icp = ""
+    # license info (HTML format is supported)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  # Home page config
+  [params.home]
+    # LoveIt NEW | 0.2.0 amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      avatarURL = "/images/logo.jpeg"
+      # title = "home title"
+      # subtitle shown in home page (HTML format is supported)
+      subtitle = "Look out of the window"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      # whether to show social links
+      social = true
+      # LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+      # LoveIt DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page
+      # default behavior when you don't set "hiddenFromHomePage" in front matter
+      defaultHiddenFromHomePage = false
+
+  # Social config about the author
+  [params.social]
+    GitHub = "tiggerlee"
+
+  # LoveIt 更改 | 0.2.0 文章页面全局配置
+  [params.page]
+    # LoveIt 新增 | 0.2.0 是否在主页隐藏一篇文章
+    hiddenFromHomePage = false
+    # LoveIt 新增 | 0.2.0 是否在搜索结果中隐藏一篇文章
+    hiddenFromSearch = false
+    # LoveIt 新增 | 0.2.0 是否使用 twemoji
+    twemoji = false
+    # 是否使用 lightgallery
+    lightgallery = false
+    # LoveIt 新增 | 0.2.0 是否使用 ruby 扩展语法
+    ruby = true
+    # LoveIt 新增 | 0.2.0 是否使用 fraction 扩展语法
+    fraction = true
+    # LoveIt 新增 | 0.2.0 是否使用 fontawesome 扩展语法
+    fontawesome = true
+    # 是否在文章页面显示原始 Markdown 文档链接
+    linkToMarkdown = true
+    # LoveIt 新增 | 0.2.4 是否在 RSS 中显示全文内容
+    rssFullText = false
+    # LoveIt 新增 | 0.2.0 目录配置
+    [params.page.toc]
+      # 是否使用目录
+      enable = true
+      # LoveIt 新增 | 0.2.9 是否保持使用文章前面的静态目录
+      keepStatic = true
+      # 是否使侧边目录自动折叠展开
+      auto = true
+    # LoveIt 新增 | 0.2.0 代码配置
+    [params.page.code]
+      # 是否显示代码块的复制按钮
+      copy = true
+      # 默认展开显示的代码行数
+      maxShownLines = 50
+    # LoveIt 更改 | 0.2.0 KaTeX 数学公式
+    [params.page.math]
+      enable = true
+      # LoveIt 更改 | 0.2.11 默认行内定界符是 $ ... $ 和 \( ... \)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      # LoveIt 更改 | 0.2.11 默认块定界符是 $$ ... $$, \[ ... \], \begin{equation} ... \end{equation} 和一些其它的函数
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      # KaTeX 插件 copy_tex
+      copyTex = true
+      # KaTeX 插件 mhchem
+      mhchem = true
 # Markup related configuration in Hugo
 [markup]
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
-
